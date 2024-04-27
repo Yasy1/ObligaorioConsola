@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace Dominio
         DateTime fechaDeFinalizacion;
         string? comentarioSobreTarea;
         DateTime fechaPactada;
+        Peon emails;
 
 
         public int Id { get => id; set => id = value; }
@@ -25,8 +27,9 @@ namespace Dominio
         public bool TareaFinalizada { get => tareaFinalizada; set => tareaFinalizada = value; }
         public DateTime FechaDeFinalizacion { get => fechaDeFinalizacion; set => fechaDeFinalizacion = value; }
         public string? ComentarioSobreTarea { get => comentarioSobreTarea; set => comentarioSobreTarea = value; }
+        internal Peon Emails { get => emails;}
 
-    public Tarea()
+        public Tarea()
         {
 
         }
@@ -51,15 +54,7 @@ namespace Dominio
         }
 
 
-        private int BuscarTarea(int id)
-        {
-            foreach (Tarea UnaTarea in Id)
-            {
 
-            }
-
-                return null;
-        }
 
 
     }
