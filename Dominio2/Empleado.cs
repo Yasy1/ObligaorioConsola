@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dominio
+namespace Dominio2
 {
-    public class Empleado
+    public abstract class Empleado
     {
         public enum Rangos { Capataz, Peon };
+        Rangos TipoEmpleado;
         string? nombre;
         string? email;
         string? password;
         DateTime ingreso = new DateTime();
-        Rangos TipoEmpleado;
+        
 
         public string? Nombre { get => nombre; set => nombre = value; }
         public string? Email { get => email; set => email = value; }

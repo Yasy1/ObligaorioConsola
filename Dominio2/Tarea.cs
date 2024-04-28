@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Dominio
+namespace Dominio2
 {
     internal class Tarea
     {
@@ -18,7 +18,7 @@ namespace Dominio
         DateTime fechaDeFinalizacion;
         string? comentarioSobreTarea;
         DateTime fechaPactada;
-        Peon emails;
+        string emailPeon;
 
 
         public int Id { get => id; set => id = value; }
@@ -27,7 +27,7 @@ namespace Dominio
         public bool TareaFinalizada { get => tareaFinalizada; set => tareaFinalizada = value; }
         public DateTime FechaDeFinalizacion { get => fechaDeFinalizacion; set => fechaDeFinalizacion = value; }
         public string? ComentarioSobreTarea { get => comentarioSobreTarea; set => comentarioSobreTarea = value; }
-        internal Peon Emails { get => emails;}
+        public string EmailPeon { get => emailPeon;}
 
         public Tarea()
         {
@@ -53,7 +53,17 @@ namespace Dominio
             return $" {Id} {Descripcion} {FinalizacionEstimada} {TareaFinalizada} {FechaDeFinalizacion} {ComentarioSobreTarea}";
         }
 
-
+        private void ValidarEmaiils()
+        {
+            string minCorreo = EmailPeon.ToLower();
+            foreach (Empleado unEmpleado in Empleado)
+            {
+                if (minCorreo != unEmpleado.Email)
+                {
+                    throw new Exception("Nombre inválido");
+                }
+            }
+        }
 
 
 
